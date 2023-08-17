@@ -1,0 +1,208 @@
+/* VARIABLE DEFINITIONS */
+:root {
+  --error-fg: #ba2121;
+
+  --message-success-bg: #dfd;
+  --message-warning-bg: #ffc;
+  --message-error-bg: #ffefef;
+
+  --body-fg: #333;
+  --body-bg: #fff;
+
+  --hairline-color: #e8e8e8;
+  --border-color: #ccc;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-fg: #eeeeee;
+    --body-bg: #121212;
+
+    --hairline-color: #272727;
+    --border-color: #353535;
+
+    --error-fg: #e35f5f;
+    --message-success-bg: #006b1b;
+    --message-warning-bg: #583305;
+    --message-error-bg: #570808;
+
+  }
+}
+
+.modal-footer-margin{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom:20px;
+}
+/*.list-table .table tbody tr:hover {
+    background-color: rgba(3, 107, 132, 0.05);
+}*/
+.text-cyan{
+    color: #34AADC;
+}
+.pending-box:hover{
+    border: none !important;
+}
+.dropdown-menu.user-profile ul li:hover{
+    background: #FFFFFF;
+    outline: none;
+}
+td div{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pageallmain .page-link{
+    color: #34AADC;
+}
+.dropdown-menu ul{
+    border: 1px solid lightgray;
+    border-radius: 0px !important;
+}
+
+/* MESSAGES & ERRORS */
+
+ul.messagelist {
+    padding: 0;
+    margin: 0;
+}
+
+ul.messagelist li {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px 10px 10px 65px;
+    margin: 0 0 10px 0;
+    background: var(--message-success-bg) url("../admin/img/icon-yes.svg") 40px 12px no-repeat;
+    background-size: 16px auto;
+    color: var(--body-fg);
+}
+
+ul.messagelist li.warning {
+    background: var(--message-warning-bg) url("../admin/img/icon-alert.svg") 40px 14px no-repeat;
+    background-size: 14px auto;
+}
+
+ul.messagelist li.error {
+    background: var(--message-error-bg) url("../admin/img/icon-no.svg") 40px 12px no-repeat;
+    background-size: 16px auto;
+}
+
+.errornote {
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    padding: 10px 12px;
+    margin: 0 0 10px 0;
+    color: var(--error-fg);
+    border: 1px solid var(--error-fg);
+    border-radius: 4px;
+    background-color: var(--body-bg);
+    background-position: 5px 12px;
+    overflow-wrap: break-word;
+}
+
+ul.errorlist {
+    margin: 0 0 4px;
+    padding: 0;
+    color: var(--error-fg);
+    background: var(--body-bg);
+}
+
+ul.errorlist li {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 4px;
+    overflow-wrap: break-word;
+}
+
+ul.errorlist li:first-child {
+    margin-top: 0;
+}
+
+ul.errorlist li a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+td ul.errorlist {
+    margin: 0;
+    padding: 0;
+}
+
+td ul.errorlist li {
+    margin: 0;
+}
+
+.form-row.errors {
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid var(--hairline-color);
+    background: none;
+}
+
+.form-row.errors ul.errorlist li {
+    padding-left: 0;
+}
+
+.errors input, .errors select, .errors textarea,
+td ul.errorlist + input, td ul.errorlist + select, td ul.errorlist + textarea {
+    border: 1px solid var(--error-fg);
+}
+
+.description {
+    font-size: 12px;
+    padding: 5px 0 0 12px;
+}
+
+.loader {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: white;
+    opacity: 0.7;
+    z-index:9999;
+    display:none;
+
+}
+
+@-webkit-keyframes spin {
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+.loader::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+.no-user-page{
+justify-content:center;
+padding-top:10px;
+}
+.no-user-page .empty-page-content{
+text-align:center;
+}
+.no-user-page .empty-page-content .img{
+text-align: center;
+}
+.interview-updated-section{
+overflow:auto;
+}

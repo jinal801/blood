@@ -1,0 +1,107 @@
+{% load static %}
+{% comment %}
+{% if flag is True %}
+<div class="inner-wrapper">
+    <div class="main-content error_403-content">
+        <div class="main-content">
+            <!-- copyright section starts -->
+            <div class="copyright-section box-border">
+                {{ flag }}
+                <!--here display dynamic year-->
+                <p>Copyright © {% now 'Y' %} <a href="{% url 'users:dashboard' %}" title="BloodDonation">BTRM</a>. All rights reserved.</p>
+            </div>
+            <!-- copyright section ends -->
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="extended-main-content">
+    <!-- copyright section starts -->
+    {% if required_extended %}
+    <div class="extended-copyright-section box-border">
+        <p class="pt-3 pb-3 pl-3 m-0">Copyright © {% now 'Y' %} <a href="{% url 'users:dashboard' %}" title="BloodDonation">BTRM</a>. All rights reserved.</p>
+    {% else %}
+    <div class="copyright-section box-border">
+        <!--here display dynamic year-->
+        <p class=" pl-2 m-0">Copyright © {% now 'Y' %} <a href="{% url 'users:dashboard' %}" title="BTRM">BloodDonation</a>. All rights reserved.</p>
+    {% endif %}
+
+   </div>
+   <!-- copyright section ends -->
+    </div></div>
+{% endif %}
+{% endcomment %}
+    {% block javascript %}
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        var slideUp = {
+            distance: '150%',
+            origin: 'left',
+            opacity: null
+        };
+        ScrollReveal().reveal('.main-title, .section-title', { delay: 500, origin: 'left', reset: true }, slideUp);
+        ScrollReveal().reveal('.sec-10, .image', { delay: 800, origin: 'bottom', reset: true });
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+    <!--===== GSAP =====-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'js/chart.min.js' %} "></script>
+    <script type="text/javascript"
+            src="{% static 'js/chartjs-plugin-doughnutlabel.min.js' %} "></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.js' %}"></script>
+
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript"
+            src="{% static 'js/moment.min.js' %} "></script>
+     <script type="text/javascript"
+                src="{% static 'js/tempusdominus_bootstrap.js' %} "></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/chosen.jquery.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+
+    <!-- Font Awesome JS-->
+    <script type="text/javascript" src="{% static 'js/fontawesome-free-5.11.2-web.all.min.js' %}"></script>
+
+    {% include 'partials/add_toaster.html' %}
+    <!--validation js-->
+    <script type="text/javascript" src="{% static 'js/parsley.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/djParsley.js' %}"></script>
+
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static 'js/custombtrm.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ip_block.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/resource_management.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fixed_cost.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/interviews.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/clients.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/adapters/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/select2.min.js' %}"></script>
+    <style>
+        .select2-container--default .select2-selection--single {
+        padding-left:2px;
+border: none !important;
+}
+    .select2-container--default{
+    height:18px;
+    }
+    </style>
+    {% endblock %}

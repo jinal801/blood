@@ -1,0 +1,15 @@
+{% autoescape off %}
+Hello,
+
+A new request for resume has been generated on BTRM.
+
+Request overview:
+
+Client /Prospect Name: {{client_name}}
+{% for resource in resources %}
+{{ forloop.counter }}. Technology : {{ resource.technology }}, No. of resource : {{ resource.count }}<br>
+{% endfor %}
+
+Click below to view/update the request.
+{{site_url}}{% url 'resource_management:requests_detail' request_id %}
+{% endautoescape %}

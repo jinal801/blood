@@ -1,0 +1,31 @@
+{% extends 'emails/email_base.html' %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+{% block content %}
+<!-- Sidebar and content section start-->
+    <div class="sec-space-both" style="padding: 30px 0px 60px 0;background: #f8f9fa;">
+        <div class="all-temp add-staff" style="padding: 0 60px">
+            <label style="opacity: 0">{{ current_time }}</label>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                Hello,
+            </p><br>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                There is an update on the resume request on BTRM.
+            </p>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+            Request overview:
+            </p><br>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                Client /Prospect Name: {{client_name}}<br>
+                {% for resource in resources %}
+                {{ forloop.counter }}. Technology : {{ resource.technology }}, No. of resource : {{ resource.count }}<label style="opacity: 0">{{ current_time }}</label><br>
+                {% endfor %}
+                <br><br>
+                <a style="color: #2a3f54;" href="{{site_url}}{% url 'resource_management:requests_detail' request_id %}" >Click here to view/update the request.</a></b>
+
+            </p>
+        </div>
+    </div>
+{% endblock %}
+{% endblock body %}

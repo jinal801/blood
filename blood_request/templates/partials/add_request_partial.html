@@ -1,0 +1,14 @@
+{% load widget_tweaks %}
+<label for="{{ field.id_for_label }}">{{ field.label }}: {% if field.field.required %}<strong class="text-danger">*</strong>{% endif %}</label>
+<div class="form-field d-flex align-items-center">
+    {% if title == "select2value" %}
+     {% render_field field class="form-control select2" %}
+    {% else %}
+        {% render_field field class="form-control select2" %}
+    {%  endif %}
+</div>
+<div class="text-danger error_class">
+      {% for error in field.errors %}
+        <small>* {{error}}</small><br>
+      {% endfor %}
+</div>

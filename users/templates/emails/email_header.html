@@ -1,0 +1,55 @@
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Welcome User</title>
+    <style>
+        /*common css starts */
+        @font-face {
+            font-family: 'Telegraf';
+            src: url({% static 'webfonts/Telegraf-UltraBold.eot' %});
+            src: url({% static 'webfonts/Telegraf-UltraBold.eot?#iefix' %}) format('embedded-opentype'),
+                url({% static 'webfonts/Telegraf-UltraBold.woff2' %}) format('woff2'),
+                url({% static 'webfonts/Telegraf-UltraBold.woff' %}) format('woff'),
+                url({% static 'webfonts/Telegraf-UltraBold.ttf' %}) format('truetype'),
+                url({% static 'webfonts/Telegraf-UltraBold.svg#Telegraf-UltraBold' %}) format('svg');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Telegraf';
+            src: url({% static 'webfonts/Telegraf-UltraLight.eot' %});
+            src: url({% static 'webfonts/Telegraf-UltraLight.eot?#iefix' %}) format('embedded-opentype'),
+                url({% static 'webfonts/Telegraf-UltraLight.woff2' %}) format('woff2'),
+                url({% static 'webfonts/Telegraf-UltraLight.woff' %}) format('woff'),
+                url({% static 'webfonts/Telegraf-UltraLight.ttf' %}) format('truetype'),
+                url({% static 'webfonts/Telegraf-UltraLight.svg#Telegraf-UltraLight' %}) format('svg');
+            font-weight: 200;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Telegraf';
+            src: url({% static 'webfonts/Telegraf-Regular.eot' %});
+            src: url({% static 'webfonts/Telegraf-Regular.eot?#iefix' %}) format('embedded-opentype'),
+                url({% static 'webfonts/Telegraf-Regular.woff2' %}) format('woff2'),
+                url({% static 'webfonts/Telegraf-Regular.woff' %}) format('woff'),
+                url({% static 'webfonts/Telegraf-Regular.ttf' %}) format('truetype'),
+                url({% static 'webfonts/Telegraf-Regular.svg#Telegraf-Regular' %}) format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+</head>
+<body>
+<div class="sign h-100" style="width:700px;text-align: center;margin: 0 auto; margin-top:4%">
+    <header class="email-temp" style="width:700px; background: #CD5C5C;">
+        <div class="logo" style="width:185px;text-align: center;margin: 0 auto; ">
+                 <img href="{{ site_url }}{% static 'images/bloodbanklogo.png' %}" width="185" height="55" style="padding-top: 10px;display: block; border: 0px;">
+        </div>
+    </header>

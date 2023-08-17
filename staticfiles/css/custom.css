@@ -1,0 +1,390 @@
+.blockquote-custom {
+    position: relative;
+    font-size: 1.1rem;
+}
+
+#errormessage {
+    font-size: 13px;
+    color: #dc3545;
+    padding-left: 11px;
+    font-weight: normal; !important;
+}
+
+#cartcard {
+    /* card style id for password reset */
+
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent
+}
+
+.reset-done {
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+
+.reset-done p {
+    line-height: 24px;
+}
+
+.django-ckeditor-widget {
+    display:block !important;
+    margin: 1em;
+}
+
+.parsley-errors-list{
+    padding-right:15px !important;
+}
+.parsley-backendError{
+    padding-right:15px !important;
+}
+
+
+/*----------403-error style--------------*/
+.error-403-content {
+    margin-left: unset;
+}
+
+.error-403-content .copyright-section {
+    left: 32px;
+    width: 100%;
+}
+
+.error-403-content .error-page {
+    height: calc(100vh - 185px);
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.error-403-content .error-page .error-page-content h3 {
+    font-size: 26px;
+    margin-top: 15px;
+}
+
+.error-403-content .error-page .error-page-content p {
+    margin-bottom: 30px;
+    color: #767889;
+
+}
+
+.error-403-content .error-page .error-page-content .btn {
+    padding: 10px 25px;
+}
+
+/*----------403-error style ends--------------*/
+.error-403-content .copyright-section {
+    left: 0 !important;
+    width: 100%;
+    position: unset;
+}
+
+.error-403-content .error-page {
+    padding: 40px 0;
+}
+@media(max-width: 768px){
+    .error-403-content .error-page {
+        padding: 80px 0;
+    }
+}
+@media(min-width: 768px) and (max-width: 1366px) {
+    .error-403-content .error-page {
+        padding: 10px 0;
+    }
+}
+
+#buttonfilter
+{
+    margin-right: 57%;
+}
+#show_all_id
+{
+    margin-left: 6px;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgba(3, 107, 132, 0.05);
+
+}
+/*
+error for add client from request side
+*/
+
+.form-group label.error{
+    color: red;
+}
+.pagination-section
+{
+    margin-bottom: 0.6%;
+}
+#user-collapse-height{
+    height:100%;
+}
+.add_resource_detail:hover{
+    background-color: #34AADC !important;
+    outline: none;
+    box-shadow: none;
+}
+.add_resource_detail:focus{
+    background-color: #fff !important;
+    outline: none;
+    box-shadow: none;
+    color:#000;
+}
+.add-request-box .add_resource_detail:focus:active {
+  display:none
+}
+.picture2 {
+    display: none;
+}
+.add_resource_detail:hover .picture1 {
+    display: none;
+}
+.add_resource_detail:hover .picture2 {
+    display: inline-block;
+}
+.add_resource_detail:focus .picture1 {
+    display: none;
+}
+.add_resource_detail:focus .picture2 {
+    display:  inline-block;
+}
+.add-client-button{
+    background-color:#FFFFFF;
+}
+.add-client-button:hover{
+    background-color: #34AADC;
+    outline: none;
+    box-shadow: none;
+}
+.picture-paper2 {
+    display: none;
+}
+.add-client-button:hover .picture-paper1 {
+    display: none;
+}
+.add-client-button:hover .picture-paper2 {
+    display: inline-block;
+}
+.add-client-button:focus .picture-paper1 {
+    display: none;
+}
+.add-client-button:focus .picture-paper2 {
+    display: inline-block;
+}
+/*
+.btn:hover,
+.btn-primary:hover,
+.btn:focus,
+.btn-primary:focus{
+    background-color: #34AADC;
+    outline: none;
+    box-shadow: none;
+}
+*/
+.btn:hover, .btn-primary:hover {
+    background-color: #EA8B37;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+}
+.view-work-history{
+    background-color:#FFFFFF;
+}
+.view-work-history:hover .picture1{
+    display: none
+}
+.view-work-history:focus .picture1 {
+    display: none;
+}
+.view-work-history:hover .picture2 {
+    display: inline-block;
+}
+.view-work-history:focus .picture2 {
+    display: inline-block;
+}
+.panel-heading h4{
+    margin: 9px;
+}
+.button-design{
+    text-align: center;
+    margin-top: 9px;
+    vertical-align: middle;
+}
+.notification{
+    position: absolute;
+}
+.parsley-required, .parsley-type, .parsley-backendError{
+    font-size: 13px;
+    color: #dc3545;
+    padding-left: 11px;
+    font-weight: normal; !important;
+}
+.parsley-min{
+    font-size: 13px;
+    color: #dc3545;
+    padding-left: 11px;
+}
+.text-danger {
+    color: #dc3545!important;
+}
+.parsley-errors-list{
+    padding-top:2px;
+}
+
+.password_ip{
+    padding-right:8% !important;
+}
+
+.add_resource_detail:focus{
+    background: #F6F6FA !important;
+    padding: 9px 14px;
+    line-height: 1.45;
+    color: inherit !important;
+    border: 1px solid #E7ECF4;
+}
+.add_resource_detail:focus .picture2 {
+    display: none !important;
+}
+.add_resource_detail:focus .picture1{
+display: inline-block !important;
+}
+.toast-message a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.my-select {
+  width: 207px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+input[type='checkbox'] {
+    accent-color: #007bff !important;
+}
+.report-my-select {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.margin_error_class{
+    margin-left: 9px !important;
+}
+
+#csv_margin{
+    margin-left: 10px;
+}
+
+
+/***/
+.main-content{
+padding-bottom:60px;
+}
+.copyright-section{
+    box-shadow: 0px 19px #f8f8fb;
+}
+.csv-btn-content #csv_margin{
+    margin-right:15px;
+}
+
+/*change the back-ground colour for the timezone field*/
+#client_bg_time_zone{
+    background:#E7ECF4;
+}
+
+.live_feed_content {
+   display: none;
+}
+
+#request-followup.disabled, #request-followup:disabled{
+    color: #34AADC !important;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.interview_date_time{
+    background:#E7ECF4;
+}
+.submit-search-margin{
+    margin-left: 14px;
+}
+
+/* add this class wherever button gets blank */
+button.btn-bg-none:focus{
+    background:none !important;
+}
+
+/* add this webkit to remove arrows of number field. (Chrome) */
+input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+        display: none;
+      }
+
+/* add this webkit to remove arrows of number field. (Firefox) */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+.add-resource-management .browse-icon-btn:hover, .browse-icon-btn:focus{
+
+background: #F9F9FC;
+    color: #767889;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+    width: 130px;
+}
+/* media screen above 991px to prevent Graph shrinking */
+@media screen and (min-width: 991px) {
+	.chart-report-data {
+	    min-height: 532px;
+    }
+}
+.custom-select2-group .select2-container--default {
+    height: auto !important;
+}
+
+.cost-stock-content .select2-container--default{
+height: auto !important;
+}
+.cost-resource-mian-box{
+ margin:0 auto 20px
+}
+.current-status-content{
+padding-top:15px
+}
+.permission-btn-group{
+    display: flex;
+    align-items: center;
+}
+.chart-report-title{
+    display: flex;
+    justify-content: space-between;
+    align-items:center
+}
+.chart-title-left{
+flex:1
+}
+
+/****/
+#analysis-chart-4{
+margin-top:-120px
+}
+#analysis-chart-4.col-lg-12{
+margin-top:0px !important
+}
+.chart-report-data{
+min-height:inherit !important
+}
+#analysis-chart-1 canvas, #analysis-chart-3 canvas{
+height:340px !important
+}
+#analysis-chart-2 canvas{height:244px !important
+}
+#analysis-chart-4 canvas{height:436px !important
+}
+@media screen and (max-width: 991px) {
+#analysis-chart-4 {
+    margin-top: 0;
+}
+}

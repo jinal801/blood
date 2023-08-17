@@ -1,0 +1,204 @@
+<html>
+{% load static %}
+<style>
+    /* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #ecf0f3;
+}
+
+.wrapper {
+    max-width: 350px;
+    min-height: 500px;
+    margin: 80px auto;
+    padding: 40px 30px 30px 30px;
+    background-color: #ecf0f3;
+    border-radius: 15px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+
+.logo {
+    width: 80px;
+    margin: auto;
+}
+
+.logo img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #5f5f5f,
+        0px 0px 0px 5px #ecf0f3,
+        8px 8px 15px #a7aaa7,
+        -8px -8px 15px #fff;
+}
+
+.wrapper .name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    color: #B41919;
+}
+
+.wrapper .form-field input {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 15px 10px 10px;
+    /* border: 1px solid red; */
+}
+
+.wrapper .form-field {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.wrapper .form-field .fas {
+    color: #555;
+}
+
+.wrapper .btn {
+    box-shadow: none;
+    width: 100%;
+    height: 40px;
+    background-color: #B41919;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1,
+        -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
+}
+
+.wrapper .btn:hover {
+    background-color: #B41919;
+}
+
+.wrapper a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #B41919;
+}
+
+.wrapper a:hover {
+    color: #B41919;
+}
+
+@media(max-width: 380px) {
+    .wrapper {
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
+    }
+}
+.wrapper .input-group-addon.psw-ic img {
+    display: none;
+}
+
+.wrapper .input-group-addon.psw-ic img:first-child {
+    display: block;
+}
+.wrapper .input-group-addon.psw-show img:first-child {
+    display: none;
+}
+
+.wrapper .input-group-addon.psw-show img:last-child {
+    display: block;
+}
+.wrapper .input-group-addon.psw-ic img {
+    margin-left: 240px;
+    margin-top: -16px;
+}
+.error_class{
+    color: #B41919;
+}
+</style>
+<body>
+<div class="wrapper">
+<div class="logo">
+    <img src="{% static 'images/bloodbanklogo.png' %}" alt="">
+</div>
+<div class="text-center mt-4 name bloodbank-name-color">
+    BloodBank
+</div>
+{% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+
+    <div class=" text-danger error_class">
+        <small>{{ error }}</small>
+
+    </div>
+    {% endfor %}
+{% endif %}
+<br>
+<form class="p-3 mt-3" method="post" id="login_form" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="form-field d-flex align-items-center">
+        <span class="far fa-user"></span>
+        <input type="text" name="username" id="{{ form.username.auto_id }}" placeholder="Username">
+        {% if form_field.errors %}
+            {% for error in form.username.errors %}
+                <span id="{{ form.username.auto_id }}" class="error text-danger error_class">{{ error }}</span>
+            {% endfor %}
+
+        {% endif %}
+    </div>
+    <div class="form-field d-flex align-items-center">
+        <span class="fas fa-key"></span>
+        <input type="password" name="password" class="password_ip" id="{{ form.password.auto_id }}" placeholder="Password">
+        <span class="btn input-group-addon psw-ic">
+            <img src="{% static 'images/eye-icon-hide.svg' %}" alt="Eye">
+            <img src="{% static 'images/eye-icon-show.svg' %}" alt="Eye">
+        </span>
+        {% if form.password.errors %}
+            {% for error in form.password.errors %}
+                <span id="" class="error text-danger error_class">{{ error }}</span>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <button class="btn mt-3">Login</button>
+</form>
+<div class="text-center fs-6">
+    <a href="{% url 'password_forgot' %}">Forget password?</a> or <a href="{% url 'users:signup' %}">Sign up</a>
+</div>
+</div>
+<!-- SCRIPTS -->
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- multiselect js -->
+<script src="{% static 'js/chosen.jquery.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $( "span.input-group-addon" ).click(function() {
+        $(this).toggleClass("psw-show");
+        var password = $(this).prev('input#{{form.password.auto_id}}');
+        if (password.attr('type') == 'text'){
+            password.attr('type', 'password');
+        }
+        else{
+            password.attr('type', 'text');
+        }
+    });
+});
+</script>
+</body>
+</html>

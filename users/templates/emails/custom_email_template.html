@@ -1,0 +1,25 @@
+{% extends 'emails/email_base.html' %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+{% block content %}
+<!-- Sidebar and content section start-->
+    <div class="sec-space-both" style="padding: 30px 0px 60px 0;background: #f8f9fa;">
+        <div class="all-temp add-staff" style="padding: 0 60px">
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                Dear Sir/Mam,
+            </p><br>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                We received a request to reset the password for your account for this email address. To initiate the password reset process for your account, click the link below.
+            </p><br>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+            </p><br>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                This link can only be used once. If you need to reset your password again, please visit {{ protocol }}://{{domain}} and request another reset.
+
+                If you did not make this request, you can simply ignore this email.
+            </p><br><br>
+        </div>
+    </div>
+{% endblock %}
+{% endblock body %}

@@ -1,0 +1,19 @@
+{% load static %}
+<!--html start-->
+<!DOCTYPE html>
+<html lang="en">
+<label style="opacity: 0">{{ current_time }}</label>
+<head>
+    <meta charset="UTF-8">
+    <title>base</title>
+    {% include 'emails/email_header.html' %}
+</head>
+<body>
+{% block body %}
+{% block content %}
+{% endblock %}
+{% endblock body %}
+{% include 'emails/email_footer.html' %}
+<label style="opacity: 0">{{ current_time }}</label>
+</html>
+<!--html end-->

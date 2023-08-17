@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}Sign Page{% endblock title %}
+
+{% block content %}
+<div class="wrapper wrapper-form">
+<div class="logo">
+    <img src="{% static 'images/bloodbanklogo.png' %}" alt="">
+</div>
+    <br>
+    <div class="text-center mt-4 name bloodbank-name-color">
+    Registration
+</div><br>
+<p class="login-box-msg login-middle-content text-center">Register your self by entering the basic details about you.</p>
+
+                    <br>
+<form class="p-3 mt-3" method="post" id="register-id" novalidate>
+    {% csrf_token %}
+    {% for field in form.visible_fields %}
+    <label for="{{ field.id_for_label }}">{{ field.label }}: {% if field.field.required %}<strong class="text-danger">*</strong>{% endif %}</label>
+    <div class="form-field">
+        {% render_field field class="form-control password-field" %}
+
+    </div>
+    <div>
+        {% for error in field.errors %}
+          <div id="errormessage">
+              *{{ error|escape }}
+          </div>
+          {% endfor %}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn mt-3 submit-button-style">Register</button>
+</form>
+<div class="text-center fs-6">
+    <a href="{% url 'login' %}">Back to Login</a>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'emails/email_base.html' %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+{% block content %}
+<!-- Sidebar and content section start-->
+<div class="sec-space-both" style="padding: 30px 0px 60px 0;background: #f8f9fa;">
+    <div class="all-temp add-staff" style="padding: 0 60px">
+        <label style="opacity: 0">{{ current_time }}</label>
+        <p style="font-family: 'Telegraf';font-weight: normal; text-decoration:none;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+            <b>Hello <label style=" text-decoration:none !important;">{{username}},</label>Welcome to BTRM!</b>
+        </p><br>
+        <label style="opacity: 0">{{ current_time }}</label>
+        <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 15px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+            Please check attached file.
+        </p><br>
+
+    </div>
+</div>
+{% endblock %}
+{% endblock body %}

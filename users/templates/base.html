@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<!--html start-->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'head.html' %}
+    {% block head %}{% endblock %}
+</head>
+<body>
+{% block body %}
+<!-- header -->
+{% include 'header.html' %}
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+
+{% endblock %}
+<!-- Sidebar and content section start-->
+<main>
+    <div class="inner-wrapper header-spacing-from-card">
+        <!-- Sidebar starts -->
+
+        <!-- Sidebar ends -->
+        <!-- main content start-->
+        <div class="main-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- main content ends-->
+    </div>
+</main>
+
+{% include 'footer.html' %}
+<div class="loader">
+</div>
+{% endblock body %}
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
+<!--html end-->

@@ -1,0 +1,547 @@
+.extended-paper-icon {
+    height: 30px;
+    width: 30px;
+}
+.resource-paper-icon {
+    height: 20px;
+    width: 20px;
+}
+.extended-bg-light-cyan {
+    color: #34AADC;
+}
+
+.extended-bg-light-white {
+    color: #f8f9fa;
+}
+
+.extended-review-form-content {
+    vertical-align: top;
+    background: #F9F9FC;
+    border: 1px solid #E7ECF4;
+    border-radius: 15px;
+        padding: 20px;
+        z-index: 1;
+    position: relative;
+    margin: 20px 20px 20px 20px;
+}
+
+.extended-approved-left-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.review-form,
+.extended-salary-form {
+    overflow-y: auto;
+}
+
+.add-request-box {
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+.menu_collapse {
+    z-index: 1000;
+    position: absolute;
+    width: auto;
+    right: 1px;
+    left: auto;
+    top: 35px;
+    text-align: left;
+    border-radius: 7px;
+    box-shadow: 0px 0px 18px rgb(33 34 39 / 10%);
+}
+.extended-main-content {
+    width: 100%;
+  -moz-transition: margin-left 0.55s ease-in-out;
+  -o-transition: margin-left 0.55s ease-in-out;
+  -webkit-transition: margin-left 0.55s ease-in-out;
+  transition: margin-left 0.55s ease-in-out;
+}
+
+.interview-details .label-value {
+    font-weight: 500;
+    font-size: 16px;
+    color: #212227;
+    margin: 0;
+    letter-spacing: 0.03em;
+}
+.menu-text {
+  left: 50px;
+  font-size:16px;
+  opacity: 1;
+  -moz-transition: opacity 0.6s 0.2s ease-out;
+  -o-transition: opacity 0.6s 0.2s ease-out;
+  -webkit-transition: opacity 0.6s 0.2s ease-out;
+  transition: opacity 0.6s 0.2s ease-out;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar--Collapse .menu-text,
+.sidebar--Collapse .sidebar-btm-img {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  position: absolute;
+}
+.interview-detail-content .interview-details .label-text{
+    color: #8F93B5;
+}
+.profile-tab-content .label, .interview-detail-content .interview-details .label-text {
+    font-size: 12px;
+    line-height: 14px;
+    color: #767889;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+}
+.input-readonly {
+    font-size: 12px;
+    line-height: 14px;
+    background:None;
+    background-color:transparent !important;
+    border: 0px !important
+    }
+
+.request_id {
+    width:25%
+}
+.box-border-header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E7ECF4;
+    border-radius: 15px 15px 15px 15px !important;
+}
+.resource_requirement_section{
+background:#34AADC !important;
+}
+.resource_requirement_heading {
+color:#FFFFFF !important;
+}
+.orange{
+color: #EA8B37;
+}
+.white{
+color: #FFFFFF;
+}
+.bg-white{
+background: #FFFFFF;
+}
+
+
+textarea{
+    min-height: 100px;
+}
+
+.textarea-size {
+box-sizing: border-box !important;
+  overflow:hidden !important;
+
+}
+.error-danger{
+font-size: 12px;
+    color: #F35550;
+    padding-left: 12px
+}
+.ui-menu{
+    border-radius:5px !important;
+    padding:.25rem !important;
+}
+
+.btn-danger{
+    background-color:#dc3545 !important;
+}
+
+.ui-menu-item, .ui-menu-item-wrapper{
+display:block;width:100%;padding:.25rem ;clear:both;font-weight:400;color:#212529;text-align:inherit;white-space:nowrap;background-color:transparent;border:0;
+}
+.ui-menu-item-wrapper{
+    border-top:1px solid #e9ecef !important;
+}
+/*-----------------login page style start---------*/
+.login-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.login-container {
+    max-width: 426px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E7ECF4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.login-container .login-logo {
+    text-align: center;
+    padding: 30px;
+}
+
+.login-container .login-top-heading {
+    padding-top: 35px;
+}
+
+.login-container .login-middle-content {
+    opacity: 0.6;
+    margin-bottom: 30px !important;
+}
+
+.login-container .login-top-heading h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #212227;
+}
+
+.login-logo img {
+    height: 47px;
+    max-width: 276px;
+    width: 100%;
+}
+
+.login-container .card {
+    border: unset;
+}
+
+.login-container .card .card-body {
+    padding: 0px 45px 44px;
+    border: unset;
+}
+
+.login-container .card .login-card-body .login-box-msg {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #212227;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-container .card .login-card-body .input-group .form-group {
+    width: 100%;
+    padding: 10px 12px 10px 0;
+    background: #F9F9FB;
+    border: 1px solid #E7ECF4;
+    border-radius: 10px;
+}
+
+.login-container .card .login-card-body .input-group .form-group .form-control:focus {
+    background: #F9F9FB !important;
+}
+
+.login-container .card .login-card-body .input-group .form-group span.btn.input-group-addon.psw-ic img {
+    display: none;
+}
+
+.login-container .card .login-card-body .input-group .form-group span.btn.input-group-addon.psw-ic img:first-child {
+    display: block;
+}
+
+.login-container .card .login-card-body .input-group .form-group span.btn.input-group-addon.psw-show img:first-child {
+    display: none;
+}
+
+.login-container .card .login-card-body .input-group .form-group span.btn.input-group-addon.psw-show img:last-child {
+    display: block;
+}
+
+
+.login-container .card .login-card-body .input-group .form-group .form-control {
+    background: #F9F9FB;
+}
+
+.login-container .card .login-card-body .input-group .form-group label {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #8F93B5;
+}
+
+.login-container .card .login-card-body .btn-sign_in {
+    margin-top: 45px;
+}
+
+.login-container .card .login-card-body .btn-reset-psw {
+    margin-top: 20px;
+}
+
+.login-container .card .login-card-body .alert-danger {
+    color: #F35550;
+    background-color: #F355503D;
+    border-color: #F355503D;
+    font-size: 14px;
+}
+
+.login-container .card .login-card-body .alert-dismissible .close {
+    padding: 0.5rem 1.25rem;
+}
+
+.login-container .card .login-card-body .close:hover {
+    color: #F35550;
+}
+
+.login-container .card .login-card-body .input-group .form-group span.btn.input-group-addon {
+    padding: 0;
+    background: transparent;
+}
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(../images/top-right-bg.svg) no-repeat;
+    background-size: cover;
+    background-position: center right;
+    height: 156px;
+    width: 476px;
+}
+
+.login-page::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(../images/bottom-left-bg.svg) no-repeat;
+    background-size: cover;
+    background-position: center left;
+    height: 156px;
+    width: 476px;
+}
+
+/*-----------------login page style end---------*/
+
+
+/*-----------------datetimepicker changes------*/
+.bootstrap-datetimepicker-widget {
+    width: auto !important;
+    font-family: 'Rubik', sans-serif !important;
+}
+.bootstrap-datetimepicker-widget .active{
+    background-color: #34AADC !important;
+}
+.bootstrap-datetimepicker-widget table {
+    margin: 10px !important;
+    border-radius: 0.3rem !important;
+    width: auto !important;
+    border: none !important;
+}
+.bootstrap-datetimepicker-widget table td, .bootstrap-datetimepicker-widget table th{
+    padding: 8px;
+    border: none !important;
+}
+.bootstrap-datetimepicker-widget table td{
+    font-size: 14px !important;
+    border-radius: 0.25rem !important;
+    -moz-border-radius: 0.25rem !important;
+}
+.bootstrap-datetimepicker-widget table th{
+    font-weight: normal !important;
+    border: none !important;
+    font-size: 12px;
+    color: #8F93B5;
+    line-height: 14px;
+    padding-left: 12px;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+    border-bottom-color: #34AADC !important;
+}
+.bootstrap-datetimepicker-widget .btn[data-action="incrementMinutes"],
+.bootstrap-datetimepicker-widget .btn[data-action="incrementHours"],
+.bootstrap-datetimepicker-widget .btn[data-action="decrementMinutes"],
+.bootstrap-datetimepicker-widget .btn[data-action="decrementHours"]{
+    background-color: #34AADC;
+    color: #fff;
+    font-size: 10px;
+}
+/*--------------------datetimepicker changes ends -------------------*/
+
+/*-------------------- list table item overlap css starts -------------------*/
+@media (min-width: 768px) and (max-width: 1600px){
+	.cv_list_table {
+	    display: block !important;
+	    width: 100% !important;
+	    overflow-x: auto !important;
+	    -webkit-overflow-scrolling: touch !important;
+	    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 1399px){
+	.client-list-table{
+	    display: block !important;
+	    width: 100% !important;
+	    overflow-x: auto !important;
+	    -webkit-overflow-scrolling: touch !important;
+	    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+	}
+}
+@media (min-width: 600px) and (max-width: 1400px){
+	.rejected_candidate_table{
+	    display: block !important;
+	    width: 100% !important;
+	    overflow-x: auto !important;
+	    -webkit-overflow-scrolling: touch !important;
+	    -ms-overflow-style: -ms-autohiding-scrollbar !important;
+	}
+}
+
+
+/*-------------------- list table item overlap css ends -------------------*/
+
+.password_ip{
+    padding-right:8% !important;
+}
+.btn:hover,
+.btn-primary:hover,
+.btn:focus,
+.btn-primary:focus{
+    background-color: #34AADC;
+    outline: none;
+    box-shadow: none;
+}
+
+.notification{
+    top:0rem !important;
+    right:0rem !important;
+}
+
+.list-td{
+    padding-top: 14px !important;
+    padding-bottom: 0px !important;
+}
+
+@media (min-width: 768px){
+	.reset_box{
+    min-width:400px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 767px){
+	.reset_box{
+    width:85%px !important;
+    }
+}
+@media (max-width: 199px){
+	.reset_box{
+    width:95%px !important;
+    }
+}
+.width-fourteen{
+    width:14.2% !important;
+}
+.width-sixteen{
+    width:16.6% !important;
+}
+.error-text-color {
+    color: #F35550 !important;
+}
+
+.password-eye,
+.password-eye:hover,
+.password-eye:focus{
+    background-color: transparent !important;
+}
+
+.parsley-errors-list li {
+    font-size: 13px;
+    color: #dc3545;
+    padding-left: 11px;
+    font-weight: normal;
+    !important: ;
+}
+.interview-column{
+      flex-direction: row;
+}
+.chart{
+    max-height: 500px;
+    width: 100%;
+    border-radius: 10px;
+}
+.input-group-append{
+    height:19px;
+}
+@media (min-width: 992px) and (max-width: 1366px) {
+.interview-column{
+      flex-direction: column;
+}
+.interview-column .p-2{padding: 0.25rem!important;}
+
+.error_class{
+    padding-left: 11px !important;
+}
+
+.select2-container--default .select2-selection--single {
+border: none !important;
+}
+.no-user-page{
+    height: calc(100vh - 400px);
+    justify-content: center;
+    text-align: center;
+}
+
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.datetimepicker-btn {
+    background: transparent;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    padding:0;
+}
+
+
+.country-error-code{
+    position: relative;
+    padding-left: 0 !important;
+    padding-top: 4px;
+}
+#id_bdm_val{
+    background: #E7ECF4;
+}
+a, a>*, input[type=file]::-webkit-file-upload-button, img, .btn, select, .clickable, .clickable > *, .select2-selection__rendered, .question-acordion-icon, path, .fa-chevron-circle-down, input[type="checkbox"], .panel-heading, .panel-heading > *{
+    cursor: pointer !important;
+}
+
+:not(a, a>*, input[type=file]::-webkit-file-upload-button, img, .btn, select, .clickable, .clickable > *, .select2-selection__rendered, .question-acordion-icon, path, .fa-chevron-circle-down, input, .panel-heading, .panel-heading > *){
+    cursor: default !important;
+}
+input, .sidebar-panel-img, .input-group-addon {
+    cursor: auto !important;
+}
+
+.bg-violet{
+    color: #8F00FF;
+    background-color: rgba(207, 159, 255, 0.3);
+}
+
+#notifications_tbody .notification_rows span{
+    font-weight: 600;
+}
+
+.bg-readonly{
+    background:#E7ECF4;
+}
+
+/*****/
+@media only screen and (max-width: 575px) {
+    .admin-user-tab ul li{margin-right: 0;}
+    .admin-user-tab ul li a{font-size: 12px;}
+}
