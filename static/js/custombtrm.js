@@ -34,27 +34,26 @@ $('.eye').click(function(e){
 })
 
 // form submit for the blood group and filter data accordingly
-//document.getElementById("id_blood_group_value").addEventListener("change", function(){
-//    console.log("UUUUUUUUUUUU", $("#id_blood_group_value").val());
-//    document.getElementById("id_donor").innerHTML = "";
-//    $.ajax({
-//        type: "GET",
-//        url: "get_donors/",
-//        data:{
-//            blood_group_value: $("id_blood_group_value").val(),
-//        },
-//        dataType: 'json',
-//        success:function(response){
-//            console.log("Success", response);
-//             $("#id_donor").html(response.donors);
-////            val select = document.getElementById("id_donor");
-////            for(var i=0; i<response.donors.length; i++)
-////            {
-////                var option = document.createElement("option");
-////                option.value = response.donors[i]["username"];
-////                option.innerHTML = response.donors[i]["username"];
-////                select_value.appendChild(option);
-//////            }
-//        }
-//    });
-//});
+document.getElementById("id_blood_group_value").addEventListener("change", function(){
+    document.getElementById("id_donor").innerHTML = "";
+    $.ajax({
+        type: "GET",
+        url: "get_donors/",
+        data:{
+            blood_group_value: $("#id_blood_group_value").val(),
+        },
+        dataType: 'json',
+        success:function(response){
+            console.log("Success", response.donors);
+             $("#id_donor").html(response.donors);
+            var select = document.getElementById("id_donor");
+            for(var i=0; i<response.donors.length; i++)
+            {
+                var option = document.createElement("option");
+                option.value = response.donors[i][1];
+                option.innerHTML = response.donors[i][0];
+                select.appendChild(option);
+            }
+        }
+    });
+});

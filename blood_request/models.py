@@ -37,7 +37,7 @@ class BloodRequest(TimeStampedModel, ActivatorModel):
     mobile_number = models.CharField(max_length=10, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.receiver.username
 
 
 auditlog.register(BloodRequest)

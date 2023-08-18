@@ -3,6 +3,7 @@ backports.zoneinfo==0.2.1
 Django==4.2.4
 django-auditlog==2.1.1
 django-extensions==3.2.3
+django-filter==22.1
 django-jsonfield==1.4.1
 django-widget-tweaks==1.4.12
 psycopg2-binary==2.9.7

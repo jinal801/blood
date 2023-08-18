@@ -23,7 +23,7 @@ from users.views import LoginView, LogoutView, ResetPasswordView, ForgotPassword
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('users.urls')),
-    path("blood_request/", include('blood_request.urls')),
+    path("blood_request_value/", include('blood_request.urls')),
 
     # Reset password
     path('password-reset/<int:pk>/', ResetPasswordView.as_view(), name='password_reset'),

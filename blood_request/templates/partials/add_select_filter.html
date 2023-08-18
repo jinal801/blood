@@ -1,0 +1,15 @@
+{% load static %}
+{% load widget_tweaks %}
+<div class="col-md-6 col-lg-3 my-3">
+    <div class="select-container">
+        <select name="{{filter_filed_value}}" onchange="this.form.submit()" class="btn btn-filter custom-select" id="{{filter_id_value}}">
+            {% for key, value in filter_choices %}
+                 {% if key_condition_check|stringformat:"s" == key|stringformat:"s" %}
+                    <option value="{{key}}" selected>{{value}}</option>
+                 {% else %}
+                    <option value="{{key}}">{{value}}</option>
+                 {% endif %}
+                {% endfor %}
+        </select>
+    </div>
+</div>

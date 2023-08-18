@@ -105,3 +105,19 @@ class User(AbstractUser):
     def get_filter_name(self):
         """get the user's full name with the email."""
         return f"{self.get_full_name()}({self.email})"
+
+    @classmethod
+    def first_name_filters(cls):
+        return [("", "Select")] + [(first_name, first_name) for first_name in
+                                   sorted(list(set(
+                                       cls.objects.values_list('first_name',
+                                                               flat=True).exclude(
+                                           first_name=''))))]
+
+    @classmethod
+    def last_name_filters(cls):
+        return [("", "Select")] + [(last_name, last_name) for last_name in
+                                   sorted(list(set(
+                                       cls.objects.values_list('last_name',
+                                                               flat=True).exclude(
+                                           last_name=''))))]
