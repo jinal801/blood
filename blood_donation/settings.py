@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_extensions',
     'auditlog',
+    "cities_light",
     "users",
     "blood_request",
 ]

@@ -1,11 +1,37 @@
 var userTypeField = $('#id_user_type')
 var BloodGroupField = $('#id_blood_group')
 var BloodGroupFieldLabel = $('label[for="id_blood_group"]')
+var CityFieldLabel = $('label[for="id_city"]')
+var CountryFieldLabel = $('label[for="id_country"]')
+var CityField = $('#id_city')
+var CountryField = $('#id_country')
 
 // display or hide blood group field according user type
+function displayOrHideCityCountry(e){
+    if (userTypeField.val()=="blood_donor"){
+        CityField.prop("required", true)
+        CountryField.prop("required", true)
+        CityField.show();
+        CountryField.show();
+        CountryFieldLabel.removeClass("d-none");
+        CityFieldLabel.removeClass("d-none");
+    }
+    else{
+        CityField.prop("required", false)
+        CountryField.prop("required", false)
+        CountryFieldLabel.addClass("d-none");
+        CityFieldLabel.addClass("d-none");
+        CityField.hide();
+        CountryField.hide();
+    }
+}
+$(document).ready(displayOrHideCityCountry);
+userTypeField.change(displayOrHideCityCountry);
+
+
+// city and country fields required if use rtype is donor.
 function displayOrHideBloodGroup(e){
-console.log(userTypeField.val());
-    if (userTypeField.val()=="blood_receiver" || userTypeField.val()=="blood_donor"){
+    if (userTypeField.val()=="blood_donor" || userTypeField.val()=="blood_receiver"){
         BloodGroupField.prop("required", true)
         BloodGroupFieldLabel.show();
         BloodGroupField.parent().removeClass("d-none");
@@ -18,7 +44,6 @@ console.log(userTypeField.val());
 }
 $(document).ready(displayOrHideBloodGroup);
 userTypeField.change(displayOrHideBloodGroup);
-
 
 
 // show or hide password

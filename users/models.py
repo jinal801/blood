@@ -63,6 +63,8 @@ class User(AbstractUser):
     blood_group = models.CharField(max_length=10, choices=BloodGroupStatus.choices,
                                    null=True, blank=True)
     mobile_number = models.CharField(max_length=10, null=True, blank=True)
+    city = models.CharField(max_length=200, blank=True, null=True)
+    country = models.CharField(max_length=200, blank=True, null=True)
 
     def is_admin(self):
         """return true if user is admin."""
