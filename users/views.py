@@ -1,5 +1,6 @@
 from http import HTTPStatus
 
+from cities_light.models import City
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import PasswordResetForm
@@ -175,3 +176,14 @@ class ResetConfirmView(SuccessMessageMixin, PasswordResetConfirmView):
         messages.error(self.request, "Link is not valid")
         return HttpResponseRedirect(
             reverse('users:dashboard'))
+
+
+def get_cities_list_from_country(request):
+    """
+    This function used to get all cities name after user select country
+    """
+    if request.method == 'GET' and request.GET.get('country'):
+        cities = City.objects.filter(country__name=request.GET.get('country'))
+        data = [("", "Select")] + list(cities.values_list('name', 'name'))
+        return JsonResponse({'cities': data})
+    return JsonResponse({'cities': [("", "Select")]})

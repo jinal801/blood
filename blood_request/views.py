@@ -3,6 +3,7 @@ from django.db.models.query import QuerySet
 from django.http.response import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 
@@ -29,6 +30,10 @@ class ADDRequestView(LoginRequiredMixin, CreateView):
         return HttpResponseRedirect(self.get_success_url())
 
 
+class AvailableDonorsMapViews(TemplateView):
+    template_name = "available_donors_map.html"
+
+
 def getDonors(request):
     blood_group_value = request.GET.get("blood_group_value")
     donors = User.objects.filter(blood_group=blood_group_value, user_type=User.UserType.DONOR)
@@ -37,6 +42,23 @@ def getDonors(request):
         "donors": donors
     }
     return JsonResponse(response_data)
+
+
+def DonorsListMapViews(request):
+    available_donors = User.objects.filter(user_type=User.UserType.DONOR)
+    from geopy.geocoders import Nominatim
+    geolocator = Nominatim(user_agent='users')
+    county_city_list = [country for country in available_donors.values_list('city', 'country').exclude(city=None, country=None)]
+    loc_list = [geolocator.geocode(i[0] + ',' + i[1]) for i in county_city_list]
+    points = [(loc.latitude, loc.longitude) for loc in loc_list]
+    # cities_list = [city for city in available_donors.values_list('city', flat=True).exclude(city=None)]
+    # countries_list = [country for country in available_donors.values_list('country', flat=True).exclude(country=None)]
+    # loc = geolocator.geocode(city + ',' + country)
+    print("latitude is :-", points)
+    response = {
+        "available_donors_points": points
+    }
+    return JsonResponse(response)
 
 
 class BloodRequestListView(ListView):

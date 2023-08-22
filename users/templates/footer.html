@@ -42,6 +42,7 @@
         ScrollReveal().reveal('.main-title, .section-title', { delay: 500, origin: 'left', reset: true }, slideUp);
         ScrollReveal().reveal('.sec-10, .image', { delay: 800, origin: 'bottom', reset: true });
     </script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
@@ -59,7 +60,10 @@
     <script type="text/javascript"
             src="{% static 'js/chartjs-plugin-doughnutlabel.min.js' %} "></script>
     <script type="text/javascript" src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script type="text/javascript" src="{% static 'js/donors_map.js' %}"></script>
 
+        <script type="text/javascript" src="{% static 'js/select2.min.js' %}"></script>
 
     <!-- SCRIPTS -->
     <script type="text/javascript"
@@ -94,7 +98,6 @@
     <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
     <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
     <script type="text/javascript" src="{% static 'ckeditor/ckeditor/adapters/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/select2.min.js' %}"></script>
     <style>
         .select2-container--default .select2-selection--single {
         padding-left:2px;

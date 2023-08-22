@@ -20,7 +20,7 @@
     {% for field in form.visible_fields %}
     <label for="{{ field.id_for_label }}">{{ field.label }}: {% if field.field.required %}<strong class="text-danger">*</strong>{% endif %}</label>
     <div class="form-field">
-        {% render_field field class="form-control password-field" %}
+        {% render_field field class="form-control select2" %}
 
     </div>
     <div>

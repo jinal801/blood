@@ -2,8 +2,9 @@ from django import forms
 from django.contrib.auth import get_user_model, password_validation
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, SetPasswordForm
 from django.core.exceptions import ValidationError
-from django.forms import ModelForm, CharField, PasswordInput
+from django.forms import ModelForm, CharField, PasswordInput, ChoiceField
 from django.utils.translation import gettext_lazy as _
+from cities_light.models import City, Country
 
 User = get_user_model()
 
@@ -18,6 +19,8 @@ class SignUpForm(UserCreationForm):
                              widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
+    country = ChoiceField()
+    city = ChoiceField()
 
     class Meta:
         model = User
@@ -43,6 +46,10 @@ class SignUpForm(UserCreationForm):
         super(SignUpForm, self).__init__(*args, **kwargs)
         self.fields["blood_group"].choices = [("", "Select")] + list(
             User.BloodGroupStatus.choices)
+        self.fields["country"].choices = [("", "Select")] + list(
+            Country.objects.values_list('name', 'name'))
+        self.fields["city"].choices = [("", "Select")] + list(
+            City.objects.values_list('name', 'name'))
 
     def save(self, commit=True):
         """

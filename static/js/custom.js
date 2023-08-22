@@ -1,5 +1,31 @@
 $("#register-id").djParsley({}); // parsley call for add user from user's side.
 
+document.getElementById("id_country").addEventListener("change", function(){
+
+    document.getElementById("id_city").innerHTML = "";
+    $.ajax({
+        type: "GET",
+        url: "/cities/",
+        data:{
+            country : $("#id_country").val(),
+        },
+        dataType: 'json',
+        success:function(response){
+            console.log("Success", response.cities);
+             $("#id_city").html(response.cities);
+            var select = document.getElementById("id_city");
+            for(var i=0; i<response.cities.length; i++)
+            {
+                var option = document.createElement("option");
+                option.value = response.cities[i][0];
+                option.innerHTML = response.cities[i][1];
+                select.appendChild(option);
+            }
+        }
+    });
+});
+
+
 /*===== MENU SHOW Y HIDDEN =====*/
 const navMenu = document.getElementById('nav-menu'),
     toggleMenu = document.getElementById('nav-toggle'),

@@ -1031,3 +1031,18 @@ ul {
     margin: 0;
     padding: 0;
  }
+
+ .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #495057;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  margin-right: 25px;
+}
+
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
