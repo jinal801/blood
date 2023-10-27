@@ -37,11 +37,7 @@ class LoginView(SuccessMessageMixin, LoginView):
 
     def get_default_redirect_url(self):
         """Return the default redirect URL."""
-        # if self.request.user.is_rm():
-        #     return resolve_url(self.next_page
-        #                        or settings.LOGIN_REDIRECT_URL_RM.format(self.request.user.id))
         return resolve_url(self.next_page or settings.LOGIN_REDIRECT_URL)
-
 
 
 class LogoutView(LoginRequiredMixin, LogoutView):

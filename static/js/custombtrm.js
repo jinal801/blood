@@ -45,6 +45,21 @@ function displayOrHideBloodGroup(e){
 $(document).ready(displayOrHideBloodGroup);
 userTypeField.change(displayOrHideBloodGroup);
 
+// city and country fields required if use rtype is donor.
+function displayOrHideCity(e){
+    if (CountryField.val()){
+        CityField.prop("required", true)
+        CityFieldLabel.show();
+        CityField.parent().removeClass("d-none");
+    }
+    else{
+        CityField.prop("required", false)
+        CityField.parent().addClass("d-none");
+        CityFieldLabel.hide();
+    }
+}
+$(document).ready(displayOrHideCity);
+CountryField.change(displayOrHideCity);
 
 // show or hide password
 $('.eye').click(function(e){

@@ -33,13 +33,13 @@ class SignUpForm(UserCreationForm):
             'password2',
             'user_type',
             'blood_group',
-            'city',
             'country',
+            'city',
             ]
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'UserName'}),
-            'city': forms.TextInput(attrs={'placeholder': 'City'}),
             'country': forms.TextInput(attrs={'placeholder': 'Country'}),
+            'city': forms.TextInput(attrs={'placeholder': 'City'}),
         }
 
     def __init__(self, *args, **kwargs):

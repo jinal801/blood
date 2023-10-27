@@ -15,8 +15,8 @@ Make Request
 <br>
 <form class="p-3 mt-3" method="post" action="{% url 'blood_request:add_request' %}" novalidate>
     {% csrf_token %}
-        {% include "partials/add_request_partial.html" with field=form.donor %}
         {% include "partials/add_request_partial.html" with field=form.blood_group_value  %}
+        {% include "partials/add_request_partial.html" with field=form.donor %}
         {% include "partials/add_request_partial.html" with field=form.hospital %}
         {% include "partials/add_request_partial.html" with field=form.units %}
         {% include "partials/add_request_partial.html" with field=form.mobile_number %}

@@ -1,3 +1,16 @@
+var global_var = {};
+function enableLoader(){
+   loaders = document.getElementsByClassName("loader");
+   for(loader of loaders){
+        loader.style.display="block";
+   }
+}
+function disableLoader(){
+   loaders = document.getElementsByClassName("loader");
+   for(loader of loaders){
+        loader.style.display="none";
+   }
+}
 $("#register-id").djParsley({}); // parsley call for add user from user's side.
 
 document.getElementById("id_country").addEventListener("change", function(){
@@ -10,6 +23,7 @@ document.getElementById("id_country").addEventListener("change", function(){
             country : $("#id_country").val(),
         },
         dataType: 'json',
+        beforeSend: enableLoader,
         success:function(response){
             console.log("Success", response.cities);
              $("#id_city").html(response.cities);
@@ -21,6 +35,7 @@ document.getElementById("id_country").addEventListener("change", function(){
                 option.innerHTML = response.cities[i][1];
                 select.appendChild(option);
             }
+            disableLoader();
         }
     });
 });
