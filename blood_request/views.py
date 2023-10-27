@@ -1,8 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models.query import QuerySet
 from django.http.response import JsonResponse, HttpResponseRedirect
-from django.shortcuts import render
 from django.urls import reverse
+from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 
@@ -29,6 +29,10 @@ class ADDRequestView(LoginRequiredMixin, CreateView):
         return HttpResponseRedirect(self.get_success_url())
 
 
+class AvailableDonorsMapViews(TemplateView):
+    template_name = "available_donors_map.html"
+
+
 def getDonors(request):
     blood_group_value = request.GET.get("blood_group_value")
     donors = User.objects.filter(blood_group=blood_group_value, user_type=User.UserType.DONOR)
@@ -39,6 +43,34 @@ def getDonors(request):
     return JsonResponse(response_data)
 
 
+def DonorsListMapViews(request):
+    """
+    get available donors
+    """
+    available_donors = User.objects.filter(user_type=User.UserType.DONOR)
+    from geopy.geocoders import Nominatim
+    geolocator = Nominatim(user_agent='users')
+    county_city_list = [country for country in available_donors.values_list('city', 'country').exclude(city=None, country=None)]
+    county_city_list_ids = [id for id in available_donors.values_list('id').exclude(city=None, country=None)]
+    loc_list = [geolocator.geocode(i[0] + ',' + i[1]) for i in county_city_list]
+    points = [(loc.latitude, loc.longitude) for loc in loc_list]
+    geo_json = [{
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [lon[1], lon[0]]
+                },
+                'properties': {
+                    'title': 'Mapbox SF'
+                },
+                } for lon in points]
+    response = {
+        "available_donors_points": geo_json,
+        "cities": county_city_list
+    }
+    return JsonResponse(response)
+
+
 class BloodRequestListView(ListView):
     """class for blood requests list."""
     model = BloodRequest
@@ -47,8 +79,12 @@ class BloodRequestListView(ListView):
     ordering = ["-created"]
 
     def get_queryset(self, **kwargs) -> QuerySet:
+        queryset = self.model.objects.all()
+        if self.request.user.user_type == User.UserType.DONOR:
+            queryset = queryset.filter(donor=self.request.user)
         queryset_filter = BloodRequestFilter(data=self.request.GET,
-                                             request=self.request)
+                                             request=self.request,
+                                             queryset=queryset)
         self.filter_form = queryset_filter.form
         order_by = self.request.GET.get("order_by", "-created")
         return queryset_filter.qs.order_by(order_by)

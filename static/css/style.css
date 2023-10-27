@@ -779,3 +779,28 @@ section{
         padding-left: 90px;
     }
 }
+.password-reset-wrapper{
+    display: inherit !important;
+    min-height: 21rem !important;
+}
+.back-login-password-set{
+    padding: unset !important;
+}
+.password-reset-complete-text{
+    margin: 24px !important;
+}
+.wrapper .back-login-page-button:hover {
+  color: #B41919 !important;
+}
+.password-reset-confirm-icon-eye-margin{
+    margin: 35px !important;
+}
+.job-box {
+  display: block !important;
+}
+.add-request-button{
+    padding: 7px !important;
+}
+.btn-custom{
+    padding: unset !important;
+}

@@ -20,8 +20,13 @@
     {% for field in form.visible_fields %}
     <label for="{{ field.id_for_label }}">{{ field.label }}: {% if field.field.required %}<strong class="text-danger">*</strong>{% endif %}</label>
     <div class="form-field">
-        {% render_field field class="form-control password-field" %}
-
+        {% render_field field class="form-control select2" %}
+        {% if field.label == 'Password' or field.label == 'Confirm Password' %}
+        <span class="input-group-addon psw-ic">
+            <img src="{% static 'images/eye-icon-hide.svg' %}" alt="Eye">
+            <img src="{% static 'images/eye-icon-show.svg' %}" alt="Eye">
+        </span>
+        {% endif %}
     </div>
     <div>
         {% for error in field.errors %}
@@ -37,4 +42,22 @@
     <a href="{% url 'login' %}">Back to Login</a>
 </div>
 </div>
+<!-- loader -->
+<div class="loader">
+</div>
+<script>
+$(document).ready(function(){
+    console.log("*******");
+    $( "span.input-group-addon" ).click(function() {
+        $(this).toggleClass("psw-show");
+        var password = $(this).prev('input.select2');
+        if (password.attr('type') == 'text'){
+            password.attr('type', 'password');
+        }
+        else{
+            password.attr('type', 'text');
+        }
+    });
+});
+</script>
 {% endblock content %}
