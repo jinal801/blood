@@ -1,0 +1,14 @@
+{% autoescape off %}
+Hello,
+
+A new request for resume has been generated on Blood Donation.
+
+Request overview:
+
+Requester Name: {{receiver_name}}
+Contact Number: {{receiver_name.mobile_number}}
+
+Click below to view/update the request.
+{{site_url}}{% url 'blood_request:blood_requests_list'  %}
+
+{% endautoescape %}

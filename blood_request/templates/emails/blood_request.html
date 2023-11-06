@@ -1,0 +1,29 @@
+{% extends 'emails/email_base.html' %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+{% block content %}
+<!-- Sidebar and content section start-->
+    <div class="sec-space-both" style="padding: 30px 0px 60px 0;background: #F08080;">
+        <div class="all-temp add-staff" style="padding: 0 60px">
+            <label style="opacity: 0">{{ current_time }}</label>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                Hello,
+            </p><br>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54 !important;margin-bottom: 0;margin-top: 0; text-align:left">
+                A new request for Blood has been generated on Blood Donation.
+            </p>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                Request overview:
+            </p><br>
+            <p style="font-family: 'Telegraf';font-weight: normal;font-size: 18px;line-height: 30px;color: #2a3f54;margin-bottom: 0;margin-top: 0; text-align:left">
+                Requester Name: {{receiver_name}}<br>
+                Contact Number: {{receiver_name.mobile_number}}
+            </p>
+            <br><br>
+                <a style="color: #2a3f54;" href="{{site_url}}{% url 'blood_request:blood_requests_list' %}">Click
+                    here to view/update the request.</a></b>
+        </div>
+    </div>
+{% endblock %}
+{% endblock body %}

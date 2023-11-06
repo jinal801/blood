@@ -10,6 +10,7 @@ from blood_request.filters import BloodRequestFilter
 from blood_request.forms import BloodRequestCreateForm
 from blood_request.models import BloodRequest
 from users.models import User
+from blood_request.utils import send_mail_to_donor
 
 
 # Create your views here.
@@ -26,6 +27,12 @@ class ADDRequestView(LoginRequiredMixin, CreateView):
         self.object.receiver_id = self.request.user.id
         self.object.request_status = BloodRequest.RequestStatus.PENDING
         self.object.save()
+        send_mail_to_donor.delay(
+            request_id=self.object.id,
+            subject="Blood Request",
+            text_body='emails/blood_request.txt',
+            email_template='emails/blood_request.html',
+        )
         return HttpResponseRedirect(self.get_success_url())
 
 
