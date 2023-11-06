@@ -70,6 +70,7 @@ class SignUpView(CreateView):
             'password': user.password,
             'confirm_password': user.password,
             'user_type': user.user_type,
+            'mobile_number': user.mobile_number,
         }
         django_messages = message_display_func(self.request, "Register successfully")
         data = {

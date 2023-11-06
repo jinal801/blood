@@ -34,7 +34,6 @@ class BloodRequest(TimeStampedModel, ActivatorModel):
     hospital = models.ForeignKey(User, on_delete=CASCADE, related_name='hospital')
     units = models.CharField(max_length=15)
     request_status = models.CharField(max_length=15, choices=RequestStatus.choices)
-    mobile_number = models.CharField(max_length=10, null=True, blank=True)
 
     def __str__(self):
         return self.receiver.username

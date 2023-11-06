@@ -21,6 +21,7 @@ zoom: 10
 });
 // Create a marker and add it to the map.
 for(var j=0; j<data.available_donors_points.length; j++){
+console.log(data.available_donors_points.length);
 new mapboxgl.Marker({color: '#F84C4C'}).setLngLat(data.available_donors_points[j].geometry.coordinates).addTo(map);
 
 }

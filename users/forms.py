@@ -17,10 +17,12 @@ class SignUpForm(UserCreationForm):
                                 widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
     email = forms.EmailField(max_length=254, help_text='Enter a valid email address',
                              widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+    mobile_number = forms.CharField(max_length=10, help_text='Enter a valid mobile number',
+                             widget=forms.TextInput(attrs={'placeholder': 'Mobile Number'}))
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
-    country = ChoiceField()
-    city = ChoiceField()
+    country = ChoiceField(required=False)
+    city = ChoiceField(required=False)
 
     class Meta:
         model = User
@@ -29,6 +31,7 @@ class SignUpForm(UserCreationForm):
             'first_name',
             'last_name',
             'email',
+            'mobile_number',
             'password1',
             'password2',
             'user_type',
